@@ -79,7 +79,7 @@ Dump Lib libUE4.so from Memory of Game Process and Generate Structure SDK of Sup
 - adb push ./libs/x86/ue4dumper /data/local/tmp/ue4dumper
 - adb shell "su 0 chmod 0777 /data/local/tmp/ue4dumper"
 - adb shell "su 0 pkill -f ue4dumper"
-- adb shell "su 0 ./data/local/tmp/ue4dumper -s -g 0x0xxxxxxx -o strings.txt"
+- adb shell "su 0 ./data/local/tmp/ue4dumper -s -g 0x06390D84"
 - adb pull /data/local/tmp/strings.txt  strings.txt
 
 ## Credits
