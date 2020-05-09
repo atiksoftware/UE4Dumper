@@ -30,6 +30,16 @@ ifeq ($(TARGET_ARCH_ABI), armeabi-v7a)
 
 endif
 
+ifeq ($(TARGET_ARCH_ABI), x86)
+	LOCAL_SRC_FILES := ELF/ElfReader.cpp \
+                       ELF/ElfRebuilder.cpp \
+                       kmods.cpp \
+
+    LOCAL_CPP_INCLUDES += $(LOCAL_PATH)
+    LOCAL_CPP_INCLUDES += $(LOCAL_PATH)/ELF
+
+endif
+
 LOCAL_LDLIBS += -L$(SYSROOT)/usr/lib -lz -llog
 
 include $(BUILD_EXECUTABLE)
