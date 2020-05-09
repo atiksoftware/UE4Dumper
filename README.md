@@ -72,6 +72,16 @@ Dump Lib libUE4.so from Memory of Game Process and Generate Structure SDK of Sup
 - Drag ndk-build of NDK in Shell or CMD and then Execute
 - Output will be in libs Folder.
 
+## How to Use on Emulator
+- Open terminal(cmd) in this project base folder.
+- if you using MEMUPlay. first call "adb connect localhost:21503" for connect to memu.
+- Call this lines on terminal.
+- adb push ./libs/x86/ue4dumper /data/local/tmp/ue4dumper
+- adb shell "su 0 chmod 0777 /data/local/tmp/ue4dumper"
+- adb shell "su 0 pkill -f ue4dumper"
+- adb shell "su 0 ./data/local/tmp/ue4dumper -s -g 0x0xxxxxxx -o strings.txt"
+- adb pull /data/local/tmp/strings.txt  strings.txt
+
 ## Credits
 - [SoFixer](https://github.com/F8LEFT/SoFixer): 32bit So(Elf) Rebuilding
 - [elf-dump-fix](https://github.com/maiyao1988/elf-dump-fix): 64bit So(Elf) Rebuilding
